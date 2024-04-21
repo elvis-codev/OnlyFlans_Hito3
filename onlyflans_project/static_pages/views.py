@@ -13,4 +13,5 @@ def bienvenido(request):
     flanes_privados = Flan.objects.filter(is_private=True)
     return render(request, 'welcome.html', {'flanes': flanes_privados})
 
-
+def contacto(request):
+    return render(request, 'contact.html', {})
