@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% block 'header' %}
+    <div style="background: red;">
+        header
+    </div>
+    {% endblock %}
+    {% block 'navbar' %}
+    <div style="background: yellow;">
+        navbar
+    </div>
+    {% endblock %}
+    {% block 'contenido' %}
+    <div style="background: white;">
+        contenido
+    </div>
+    {% endblock %}
+    {% block 'footer' %}
+    <div style="background: green;">
+        footer
+    </div>
+    {% endblock %}
+</body>
+
+</html>
