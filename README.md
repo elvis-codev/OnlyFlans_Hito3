@@ -10,7 +10,7 @@ OnlyFlans es un proyecto de sitio web desarrollado en Django para una PYME dedic
 ## Screenshots de las Vistas
 <div>
     <img src="https://github.com/elvis-codev/OnlyFlans_Hito3/blob/main/Screenshots/Captura1.png" width="200" />
-    <img src="https://github.com/elvis-codev/OnlyFlans_Hito3/blob/main/Screenshots/Captura2.pngg" width="200" />
+    <img src="https://github.com/elvis-codev/OnlyFlans_Hito3/blob/main/Screenshots/Captura2.png" width="200" />
     <img src="https://github.com/elvis-codev/OnlyFlans_Hito3/blob/main/Screenshots/Captura3.png" width="200" />
     <img src="https://github.com/elvis-codev/OnlyFlans_Hito3/blob/main/Screenshots/Captura4.png" width="200" />
     <img src="https://github.com/elvis-codev/OnlyFlans_Hito3/blob/main/Screenshots/Captura5.png" width="200" />
