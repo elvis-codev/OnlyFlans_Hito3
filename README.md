@@ -31,6 +31,13 @@ Para ejecutar este proyecto localmente, asegúrate de tener instalado lo siguien
 - Django 4.2.11
 - Un entorno virtual en WSL
 
+## Usuarios
+
+| TIPO  | username  | password  |
+|---|---|---|
+| superusuario  | admin  | 1234  |
+--- 
+
 ## Instrucciones de Instalación
 
 1. Clona este repositorio en tu máquina local:
