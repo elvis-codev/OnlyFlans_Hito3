@@ -6,8 +6,10 @@
   <title>Contacto con OnlyFlans</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
+    .hidden {
+        display: none;
+    }
     .floating-form {
       background-color: #ffffff;
       padding: 50px;
@@ -80,30 +82,44 @@
             </div>
         </nav>
     </header>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <form method="post" class="floating-form">
-                    {% csrf_token %}
-                    <div class="form-title">Formulario de Contacto</div>
-                    <div class="form-subtitle">¡Contáctanos, estaremos encantados de ayudarte!</div>
-                    <div class="form-group mb-4">
-                        <label for="customer_email">Correo</label>
-                        <input type="text" class="form-control" id="customer_email" name="customer_email" placeholder="Ingrese su Correo Electrónico"></input>
-                    </div>
-                    <div class="form-group mb-4">
-                        <label for="customer_name">Nombre</label>
-                        <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="Ingrese su Nombre"></input>
-                    </div>
-                    <div class="form-group mb-4">
-                        <label for="message">Mensaje</label>
-                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Ingrese su Mensage"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Enviar</button>
-                </form>
+    
+    
+    <form method="post">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form method="post" class="floating-form">
+                        {% csrf_token %}
+                        <div class="form-title">Formulario de Contacto</div>
+                        <div class="form-subtitle">¡Contáctanos, estaremos encantados de ayudarte!</div>
+                        {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-success alert-dismissible fade show" role="alert" id="alertMessage">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                        {% endif %}
+                        <div class="form-group mb-4">
+                            <label for="customer_email">Correo</label>
+                            <input type="text" class="form-control" id="customer_email" name="customer_email" placeholder="Ingrese su Correo Electrónico" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="customer_name">Nombre</label>
+                            <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="Ingrese su Nombre" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="message">Mensaje</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Ingrese su Mensaje" required></textarea>
+                        </div>
+                        <button type="submit" id="boton" class="btn btn-primary btn-block">Enviar</button>
+                        
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
+
+
     
     <footer class="footer mt-auto py-3 bg-light">
         <div class="container text-center">
@@ -112,9 +128,17 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        // Ocultar el mensaje después de 3 segundos
+        setTimeout(function() {
+            document.getElementById('alertMessage').style.display = 'none';
+        }, 3000);
+    </script>
+
 </body>
 </html>
